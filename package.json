@@ -1,0 +1,24 @@
+{
+  "name": "@homegraph/dotenv-variables",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "repository": "git@github.com:homegraph/dotenv-variables.git",
+  "author": "Paolo Tremadio <hello@paolotremadio.com>",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "echo \"Build is not configured for package, skipping.\"",
+    "test": "echo \"test is not configured for package, skipping.\"",
+    "lint": "eslint src/ --ext .js",
+    "bump-version": "np"
+  },
+  "devDependencies": {
+    "@homegraph/eslint-config-hg-base": "*",
+    "np": "^6.2.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "dotenv-expand": "^5.1.0"
+  }
+}
