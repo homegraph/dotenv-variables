@@ -1,11 +1,11 @@
 // Inspired by https://github.com/zeit/next.js/blob/canary/packages/next/lib/load-env-config.ts
 /* eslint no-continue: 0,  no-restricted-syntax: 0 */
-const fs = require('fs');
-const path = require('path');
-const dotenv = require('dotenv');
-const dotenvExpand = require('dotenv-expand');
+import fs from 'fs';
+import path from 'path';
+import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 
-let combinedEnv;
+let combinedEnv: any;
 
 const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', dir = process.cwd()) => {
   // don't reload env if we already have since this breaks escaped
@@ -34,9 +34,9 @@ const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', 
       }
 
       const contents = fs.readFileSync(dotEnvPath, 'utf8');
-      let result = {};
-      result.parsed = dotenv.parse(contents);
+      let result = { parsed: dotenv.parse(contents) };
 
+      // @ts-ignore
       result = dotenvExpand(result);
 
       if (result.parsed) {

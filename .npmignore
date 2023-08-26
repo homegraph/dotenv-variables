@@ -1,3 +1,4 @@
 .eslintrc
 .np-config.json
 .idea
+tsconfig.json
