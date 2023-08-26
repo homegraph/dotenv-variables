@@ -1,6 +1,6 @@
 {
   "name": "@homegraph/dotenv-variables",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "src/index.js",
   "repository": "git@github.com:homegraph/dotenv-variables.git",
   "author": "Paolo Tremadio <hello@paolotremadio.com>",
