@@ -7,7 +7,7 @@ const dotenvExpand = require('dotenv-expand');
 
 let combinedEnv;
 
-const loadEnvConfig = (environment, dir = process.cwd()) => {
+const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', dir = process.cwd()) => {
   // don't reload env if we already have since this breaks escaped
   // environment values e.g. \$ENV_FILE_KEY
   if (combinedEnv) return combinedEnv;
