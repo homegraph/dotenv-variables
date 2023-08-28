@@ -1,13 +1,15 @@
-// Inspired by https://github.com/zeit/next.js/blob/canary/packages/next/lib/load-env-config.ts
-/* eslint no-continue: 0,  no-restricted-syntax: 0 */
+// Inspired by https://github.com/vercel/next.js/blob/canary/packages/next-env/index.ts
+/* eslint no-continue: 0,  no-restricted-syntax: 0, @typescript-eslint/no-unsafe-member-access: 1 */
 import fs from 'fs';
 import path from 'path';
 import dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
 
-let combinedEnv: any;
+export type Env = Record<string, string | undefined>;
 
-const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', dir = process.cwd()) => {
+let combinedEnv: Env;
+
+export default (environment = process.env.HOMEGRAPH_ENV ?? 'production', dir = process.cwd()) => {
   // don't reload env if we already have since this breaks escaped
   // environment values e.g. \$ENV_FILE_KEY
   if (combinedEnv) return combinedEnv;
@@ -44,7 +46,7 @@ const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', 
       }
 
       Object.assign(combinedEnv, result.parsed);
-    } catch (err) {
+    } catch (err: any) {
       if (err.code !== 'ENOENT') {
         console.error(`Failed to load env from ${envFile}`, err);
       }
@@ -60,5 +62,3 @@ const loadEnvConfig = (environment = process.env.HOMEGRAPH_ENV || 'production', 
 
   return combinedEnv;
 };
-
-module.exports = loadEnvConfig;

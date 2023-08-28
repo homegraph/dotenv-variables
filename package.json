@@ -16,7 +16,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@homegraph/eslint-config-hg-base": "^0.1.7",
+    "@homegraph/eslint-config-hg-base": "^0.1.10",
     "np": "^6.2.3",
     "typescript": "5.1.6"
   },
