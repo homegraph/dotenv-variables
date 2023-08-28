@@ -1,6 +1,6 @@
 {
   "name": "@homegraph/dotenv-variables",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "repository": "git@github.com:homegraph/dotenv-variables.git",
